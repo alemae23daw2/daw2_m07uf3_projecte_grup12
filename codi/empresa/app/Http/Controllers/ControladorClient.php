@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
-
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 class ControladorClient extends Controller
@@ -27,7 +28,7 @@ class ControladorClient extends Controller
      */
     public function create()
     {
-        //
+        return view('crea');
     }
 
     /**
@@ -35,7 +36,20 @@ class ControladorClient extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nouClient = $request->validate([
+            'dniClient' => 'required',
+            'nomCognoms' => 'required',
+            'edat' => 'required',
+            'telefon' => 'required',
+            'adreca' => 'required',
+            'ciutat' => 'required',
+            'pais' => 'required',
+            'email' => 'required',
+            'tipusTarjeta' => 'required',
+            'numeroTarjeta' => 'required'
+            ]);
+        $client = Client::create($nouClient);
+        return view('dashboard');
     }
 
     /**
@@ -65,8 +79,9 @@ class ControladorClient extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $dni)
     {
-        //
+        $client = Client::findOrFail($dni)->delete();
+        return view('dashboard');
     }
 }

@@ -15,6 +15,7 @@
             <td>Email</td>
             <td>Tipus de Tarjeta</td>
             <td>Numero de la Tarjeta</td>
+            <td>Accions sobre la taula</td>
             </tr>
         </thead>
         <tbody>
@@ -30,9 +31,19 @@
             <td>{{$cli->email}}</td>
             <td>{{$cli->tipusTarjeta}}</td>
             <td>{{$cli->numeroTarjeta}}</td>
+            <td class="text-left">
+                <form action="{{ route('clients.destroy', $cli->dniClient)}}" method="post" style="display: inline-block">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger btn-sm" type="submit">Esborra</button>
+                </form>
+            </td>
             </tr>
             @endforeach
         </tbody>
     </table>
 <div>
+<div class="p-6 bg-white border-b border-gray-200">
+    <a href="{{ url('dashboard') }}">Torna al dashboard</a>
+</div>
 @endsection
