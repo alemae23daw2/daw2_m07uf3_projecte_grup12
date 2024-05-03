@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreign('dniClient')->references('dniClient')->on('clients')->onDelete('cascade')->onUpdate('cascade');
             $table->string('codiUnic');
             $table->foreign('codiUnic')->references('codiUnic')->on('apartaments')->onDelete('cascade')->onUpdate('cascade');
+            $table->primary(['dniClient', 'codiUnic']);
             $table->date('dataInici'); //Any-Mes-Dia
             $table->string('horaInici');
             $table->date('dataFinal'); //Any-Mes-Dia
@@ -26,7 +27,6 @@ return new class extends Migration
             $table->enum('diposit', ['si', 'no']);
             $table->integer('dipositQuantitat');
             $table->enum('tipusAsseguranca', ['Franquícia fins a 1000 Euros', 'Franquíca fins 500 Euros', 'Sense franquícia']);
-            $table->primary(['dniClient', 'codiUnic']);
         });
     }
 

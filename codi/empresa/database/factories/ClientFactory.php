@@ -16,8 +16,20 @@ class ClientFactory extends Factory
      */
     public function definition(): array
     {
+        $nums = $this->faker->numberBetween(10000000, 99999999);
+        $letra = strtoupper($this->faker->randomLetter());
+        $dni = $nums . $letra;
         return [
-            //
+            'dniClient' => $dni,
+            'nomCognoms' => $this->faker->name(),
+            'edat' => $this->faker->numberBetween(18, 80),
+            'telefon' => $this->faker->phoneNumber(),
+            'adreca' => $this->faker->streetAddress(),
+            'ciutat' => $this->faker->city(),
+            'pais' => $this->faker->country(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'tipusTarjeta' => $this->faker->randomElement(['Dèbit', 'Crèdit']),
+            'numeroTarjeta' => $this->faker->creditCardNumber(),
         ];
     }
 }

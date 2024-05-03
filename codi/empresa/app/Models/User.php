@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public $timestamps = false;
     use HasFactory, Notifiable;
 
     /**
@@ -17,9 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name','email','contrasenya','tipus','horaEntrada','horaSortida'
     ];
 
     /**
