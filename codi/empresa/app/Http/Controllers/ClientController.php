@@ -61,7 +61,7 @@ class ClientController extends Controller
     public function edit(string $dni)
     {
         $dades_client = Client::findOrFail($dni);
-        return view('actualitza',compact('dades_client'));
+        return view('actualitzaClient',compact('dades_client'));
     }
 
     /**

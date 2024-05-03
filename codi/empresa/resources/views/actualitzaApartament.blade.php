@@ -64,8 +64,8 @@
         </form>
     </div>
 </div>
-<br><a href="{{ url('clients') }}">Accés directe a la Llista d'empleats</a>
+<br><a href="{{ url('clients') }}">Accés directe a la Llista de Clients</a>
 <div class="p-6 bg-white border-b border-gray-200">
-        <a href="{{ url('dashboard') }}">Torna al dashboard</a>
+    <a href="{{ url('dashboard') }}">Torna al dashboard</a>
 </div>
 @endsection
