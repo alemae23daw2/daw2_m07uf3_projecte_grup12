@@ -48,13 +48,13 @@
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" name="email"/>
+            <input type="email" class="form-control" name="email"/>
         </div>
         <div class="form-group">           
             <label for="tipusTarjeta">Tipus de Tarjeta</label>
             <select name="tipusTarjeta">
-			    <option value="Dèbit">Dèbit</option>
-			    <option value="Crèdit">Crèdit</option>			    
+                <option value="Dèbit">Dèbit</option>
+                <option value="Crèdit">Crèdit</option>			    
 			</select>
         </div>
         <div class="form-group">           

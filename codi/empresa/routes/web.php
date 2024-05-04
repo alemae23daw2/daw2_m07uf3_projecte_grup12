@@ -18,6 +18,7 @@ Route::group(['middleware' => 'auth'], function(){
     })->name('dashboard');
     
     Route::resource('clients', ClientController::class);
+    Route::resource('apartaments', ClientController::class);
 });
 
 Route::middleware('auth')->group(function () {

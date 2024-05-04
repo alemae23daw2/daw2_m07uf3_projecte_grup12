@@ -5,39 +5,43 @@
     <table class="table">
         <thead>
             <tr class="table-primary">
-            <td>DNI Client</td>
-            <td>Nom i Cognoms</td>
-            <td>Edat</td>
-            <td>Telefon</td>
-            <td>Adreça</td>
+            <td>Codi Unic</td>
+            <td>Referencia</td>
             <td>Ciutat</td>
-            <td>País</td>
-            <td>Email</td>
-            <td>Tipus de Tarjeta</td>
-            <td>Numero de la Tarjeta</td>
+            <td>Barri</td>
+            <td>Nom Carrer</td>
+            <td>Numero Carrer</td>
+            <td>Pis</td>
+            <td>Numero de Llits</td>
+            <td>Numero d'Habitacions</td>
+            <td>Ascensor</td>
+            <td>Calefacció</td>
+            <td>Aire Acondicionat</td>
             <td>Accions sobre la taula</td>
             </tr>
         </thead>
         <tbody>
-            @foreach($dades_clients as $cli)
+            @foreach($dades_apartaments as $apt)
             <tr>
-            <td>{{$cli->dniClient}}</td>
-            <td>{{$cli->nomCognoms}}</td>
-            <td>{{$cli->edat}}</td>
-            <td>{{$cli->telefon}}</td>
-            <td>{{$cli->adreca}}</td>
-            <td>{{$cli->ciutat}}</td>
-            <td>{{$cli->pais}}</td>
-            <td>{{$cli->email}}</td>
-            <td>{{$cli->tipusTarjeta}}</td>
-            <td>{{$cli->numeroTarjeta}}</td>
+            <td>{{$apt->codiUnic}}</td>
+            <td>{{$apt->referencia}}</td>
+            <td>{{$apt->ciutat}}</td>
+            <td>{{$apt->barri}}</td>
+            <td>{{$apt->nomCarrer}}</td>
+            <td>{{$apt->numCarrer}}</td>
+            <td>{{$apt->pis}}</td>
+            <td>{{$apt->numLlits}}</td>
+            <td>{{$apt->numHabitacions}}</td>
+            <td>{{$apt->ascensor}}</td>
+            <td>{{$apt->calefaccio}}</td>
+            <td>{{$apt->aireCondicionat}}</td>
             <td class="text-left">
-                <form action="{{ route('clients.destroy', $cli->dniClient)}}" method="post" style="display: inline-block">
+                <form action="{{ route('apartaments.destroy', $apt->codiUnic)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm" type="submit">Esborra</button>
                 </form>
-                <a href="{{ route('clients.edit', $cli->dniClient)}}" class="btn btn-primary btn-sm">Edita</a>
+                <a href="{{ route('apartaments.edit', $apt->codiUnic)}}" class="btn btn-primary btn-sm">Edita</a>
             </td>
             </tr>
             @endforeach

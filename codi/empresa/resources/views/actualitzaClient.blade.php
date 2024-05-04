@@ -14,7 +14,7 @@
             </ul>
         </div>
         @endif
-        <form method="post" action="{{ route('clients.update', $dades_client->tid) }}">
+        <form method="post" action="{{ route('clients.update', $dades_client->dniClient) }}">
 			@csrf
             @method('PATCH')
             <div class="form-group">           
@@ -47,7 +47,7 @@
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="text" class="form-control" name="email"  value="{{ $dades_client->email }}"/>
+				<input type="email" class="form-control" name="email"  value="{{ $dades_client->email }}"/>
 			</div>
 			<div class="form-group">           
 				<label for="tipusTarjeta">Treball a distància</label>

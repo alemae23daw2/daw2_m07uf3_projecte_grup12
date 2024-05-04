@@ -19,48 +19,63 @@
         @csrf
         <!-- https://laravel.com/docs/10.x/csrf -->
         <div class="form-group">           
-            <label for="dniClient">DNI</label>
-            <input type="text" class="form-control" name="dniClient"/>
+            <label for="codiUnic">Codi Únic</label>
+            <input type="text" class="form-control" name="codiUnic"/>
         </div>
         <div class="form-group">           
-            <label for="nomCognoms">Nom i Cognoms</label>
-            <input type="text" class="form-control" name="nomCognoms"/>
+            <label for="referencia">Referencia</label>
+            <input type="text" class="form-control" name="referencia"/>
         </div>
         <div class="form-group">           
-            <label for="edat">Edat</label>
-            <input type="number" class="form-control" name="edat"/>
-        </div>
-        <div class="form-group">           
-            <label for="telefon">Telèfon</label>
-            <input type="text" class="form-control" name="telefon"/>
-        </div>
-        <div class="form-group">           
-            <label for="adreca">Adreça</label>
-            <input type="text" class="form-control" name="adreca"/>
-        </div>        
-        <div class="form-group">
             <label for="ciutat">Ciutat</label>
             <input type="text" class="form-control" name="ciutat"/>
         </div>
-        <div class="form-group">
-            <label for="pais">País</label>
-            <input type="text" class="form-control" name="pais"/>
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" name="email"/>
+        <div class="form-group">           
+            <label for="barri">Barri</label>
+            <input type="text" class="form-control" name="barri"/>
         </div>
         <div class="form-group">           
-            <label for="tipusTarjeta">Tipus de Tarjeta</label>
-            <select name="tipusTarjeta">
-			    <option value="Dèbit">Dèbit</option>
-			    <option value="Crèdit">Crèdit</option>			    
+            <label for="nomCarrer">Nom Carrer</label>
+            <input type="text" class="form-control" name="nomCarrer"/>
+        </div>        
+        <div class="form-group">
+            <label for="numCarrer">Num Carrer</label>
+            <input type="number" class="form-control" name="numCarrer"/>
+        </div>
+        <div class="form-group">
+            <label for="pis">Pis</label>
+            <input type="number" class="form-control" name="pis"/>
+        </div>
+        <div class="form-group">
+            <label for="numLlits">Numero de Llits</label>
+            <input type="number" class="form-control" name="numLlits"/>
+        </div>
+        <div class="form-group">
+            <label for="numHabitacions">Numero d'Habitacions</label>
+            <input type="number" class="form-control" name="numHabitacions"/>
+        </div>
+        <div class="form-group">           
+            <label for="ascensor">Ascensor</label>
+            <select name="ascensor">
+                <option value="si">Si</option>
+                <option value="no">No</option>
 			</select>
         </div>
         <div class="form-group">           
-            <label for="numeroTarjeta">Numero de Tarjeta</label>
-            <input type="text" class="form-control" name="numeroTarjeta"/>
-        </div>   
+            <label for="calefaccio">Calefacció</label>
+            <select name="calefaccio">
+                <option value="Elèctrica">Elèctrica</option>
+                <option value="Gas Natural">Gas Natural</option>		
+                <option value="Butá">Butá</option>    
+			</select>
+        </div> 
+        <div class="form-group">           
+            <label for="aireCondicionat">Aire Acondacionat</label>
+            <select name="aireCondicionat">
+                <option value="si">Si</option>
+                <option value="no">No</option>
+			</select>
+        </div> 
         <button type="submit" class="btn btn-block btn-primary">Envia</button>
     </form>    
     </div>
