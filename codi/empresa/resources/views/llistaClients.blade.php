@@ -38,6 +38,7 @@
                     <button class="btn btn-danger btn-sm" type="submit">Esborra</button>
                 </form>
                 <a href="{{ route('clients.edit', $cli->dniClient)}}" class="btn btn-primary btn-sm">Edita</a>
+                <a href="{{ route('clients.show', $cli->dniClient)}}" class="btn btn-info btn-sm">Mostra</a>
             </td>
             </tr>
             @endforeach

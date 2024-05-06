@@ -54,22 +54,23 @@ class ApartamentController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $dades_apartament = Apartament::findOrFail($id);
+        return view('mostraApartament',compact('dades_apartament')); 
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $dni)
+    public function edit(string $id)
     {
-        $dades_apartament = Apartament::findOrFail($dni);
+        $dades_apartament = Apartament::findOrFail($id);
         return view('actualitzaApartament',compact('dades_apartament'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $dni)
+    public function update(Request $request, $id)
     {
         $noves_dades_apartament = $request->validate([
             'codiUnic' => 'required',
@@ -85,16 +86,16 @@ class ApartamentController extends Controller
             'calefaccio' => 'required',
             'aireCondicionat' => 'required'
         ]);
-        Apartament::findOrFail($dni)->update($noves_dades_apartament);
+        Apartament::findOrFail($id)->update($noves_dades_apartament);
         return view('dashboard');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $dni)
+    public function destroy(string $id)
     {
-        $apartament = Apartament::findOrFail($dni)->delete();
+        $apartament = Apartament::findOrFail($id)->delete();
         return view('dashboard');
     }
 }

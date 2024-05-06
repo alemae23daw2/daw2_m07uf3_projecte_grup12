@@ -52,17 +52,20 @@ class LlogaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $dni, string $codi)
     {
-        //
+        $dades_lloga = Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
+        ->firstOrFail();
+        return view('mostraLloga',compact('dades_lloga')); 
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $dni)
+    public function edit(string $dni, string $codi)
     {
-        $dades_lloga = Lloga::findOrFail($dni);
+        $dades_lloga = Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
+        ->firstOrFail(); 
         return view('actualitzaLloga',compact('dades_lloga'));
     }
 
@@ -71,19 +74,22 @@ class LlogaController extends Controller
      */
     public function update(Request $request, $dni)
     {
-        $noves_dades_client = $request->validate([
+        $noves_dades_lloga = $request->validate([
             'dniClient' => 'required',
-            'nomCognoms' => 'required',
-            'edat' => 'required',
-            'telefon' => 'required',
-            'adreca' => 'required',
-            'ciutat' => 'required',
-            'pais' => 'required',
-            'email' => 'required',
-            'tipusTarjeta' => 'required',
-            'numeroTarjeta' => 'required'
+            'codiUnic' => 'required',
+            'dataInici' => 'required',
+            'horaInici' => 'required',
+            'dataFinal' => 'required',
+            'horaFinal' => 'required',
+            'lliuramentClaus' => 'required',
+            'devolucioClaus' => 'required',
+            'preuPerDia' => 'required',
+            'diposit' => 'required',
+            'dipositQuantitat' => 'required',
+            'tipusAsseguranca' => 'required'
         ]);
-        Client::findOrFail($dni)->update($noves_dades_client);
+        Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
+        ->firstOrFail()->update($noves_dades_lloga);
         return view('dashboard');
     }
 
@@ -92,7 +98,8 @@ class LlogaController extends Controller
      */
     public function destroy(string $dni)
     {
-        $lloga = Lloga::findOrFail($dni)->delete();
+        $lloga = Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
+        ->firstOrFail()->delete();
         return view('dashboard');
     }
 
@@ -104,7 +111,8 @@ class LlogaController extends Controller
 
     public function show_basic($dniClient)
     {
-        $dades_lloga = Lloga::findOrFail($dniClient);
+        $dades_lloga = Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
+        ->firstOrFail();
         return view('mostra-basica', compact('dades_lloga'));
     }
 }

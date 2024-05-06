@@ -42,6 +42,7 @@
                     <button class="btn btn-danger btn-sm" type="submit">Esborra</button>
                 </form>
                 <a href="{{ route('apartaments.edit', $apt->codiUnic)}}" class="btn btn-primary btn-sm">Edita</a>
+                <a href="{{ route('apartaments.show', $apt->codiUnic)}}" class="btn btn-info btn-sm">Mostra</a>
             </td>
             </tr>
             @endforeach

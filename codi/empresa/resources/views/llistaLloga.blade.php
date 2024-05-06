@@ -34,12 +34,13 @@
             <td>{{$llog->dipositQuantitat}}</td>
             <td>{{$llog->tipusAsseguranca}}</td>
             <td class="text-left">
-                <form action="{{ route('lloga.destroy', $cli->dniClient)}}" method="post" style="display: inline-block">
+                <form action="{{ route('lloga.destroy', $llog->dniClient, $llog->codiUnic)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm" type="submit">Esborra</button>
                 </form>
-                <a href="{{ route('lloga.edit', $cli->dniClient)}}" class="btn btn-primary btn-sm">Edita</a>
+                <a href="{{ route('lloga.edit', $llog->dniClient, $llog->codiUnic)}}" class="btn btn-primary btn-sm">Edita</a>
+                <a href="{{ route('lloga.show', $llog->dniClient, $llog->codiUnic)}}" class="btn btn-info btn-sm">Mostra</a>
             </td>
             </tr>
             @endforeach
