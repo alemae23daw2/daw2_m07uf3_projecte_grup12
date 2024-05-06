@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,13 @@ class ClientController extends Controller
     {
         $dades_clients = Client::all();
         return view('llistaClients', compact('dades_clients'));
+    }
+
+    public function pdf(string $dni)
+    {
+        $dades_client = Client::findOrFail($dni);
+        $pdf = PDF::loadView('mostraClient', compact($dades_client));
+        return view('dashboard');
     }
 
     /**

@@ -55,6 +55,9 @@
     <div class="p-6 bg-white border-b border-gray-200">
 	<a href="{{ url('dashboard') }}">Torna al dashboard</a>                     
     </div>
+	<form action="{{ route('clients.pdf', $cli->dniClient)}}" method="get" style="display: inline-block">
+        <button class="btn btn-danger btn-sm" type="submit">PDF</button>
+    </form>
     <div class="p-6 bg-white border-b border-gray-200">
 	<a href="{{ url('clients') }}">Torna a la llista</a>
     </div>

@@ -31,7 +31,7 @@
 			</div>
 			<div class="form-group">           
 				<label for="telefon">Telèfon</label>
-				<input type="date" class="form-control" name="telefon" value="{{ $dades_client->telefon }}"/>
+				<input type="text" class="form-control" name="telefon" value="{{ $dades_client->telefon }}"/>
 			</div>
 			<div class="form-group">           
 				<label for="adreca">Adreça</label>
@@ -43,7 +43,7 @@
 			</div>
 			<div class="form-group">
 				<label for="pais">País</label>
-				<input type="tel" class="form-control" name="pais"  value="{{ $dades_client->pais }}"/>
+				<input type="text" class="form-control" name="pais"  value="{{ $dades_client->pais }}"/>
 			</div>
 			<div class="form-group">
 				<label for="email">Email</label>
@@ -55,10 +55,10 @@
 					<option value="Dèbit" {{ $dades_client->tipusTarjeta == "Dèbit" ? 'selected' : ''}}>Dèbit</option>
 					<option value="Crèdit" {{ $dades_client->tipusTarjeta == "Crèdit" ? 'selected' : ''}}>Crèdit</option>			    
 				</select>
-			</div>			
+			</div>
 			<div class="form-group">           
 				<label for="numeroTarjeta">Numero de Tarjeta</label>
-				<input type="date" class="form-control" name="numeroTarjeta"  value="{{ $dades_client->numeroTarjeta }}"/>
+				<input type="text" class="form-control" name="numeroTarjeta"  value="{{ $dades_client->numeroTarjeta }}"/>
 			</div>
 			<button type="submit" class="btn btn-block btn-primary">Envia</button>
         </form>

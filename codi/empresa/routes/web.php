@@ -24,8 +24,7 @@ Route::group(['middleware' => 'auth'], function(){
         return view('dashboard-basic');
     })-> name('dashboard-basic');
 
-    //Route::get('/clients/{dniClient}', 'App\Http\Controllers\ClientController@show')->name('clients.show');
-    //Route::get('/clients/{dniClient}/edit', 'App\Http\Controllers\ClientController@edit')->name('clients.edit');
+    Route::get('clients/pdf', 'App\Http\Controllers\ClientController@pdf')->name('clients.pdf');
 
     Route::resource('apartaments', ApartamentController::class);
     Route::resource('clients', ClientController::class);

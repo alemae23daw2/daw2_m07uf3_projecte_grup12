@@ -17,10 +17,8 @@ class ClientFactory extends Factory
     public function definition(): array
     {
         $nums = $this->faker->numberBetween(10000000, 99999999);
-        $letra = strtoupper($this->faker->randomLetter());
-        $dni = $nums . $letra;
         return [
-            'dniClient' => $dni,
+            'dniClient' => $nums,
             'nomCognoms' => $this->faker->name(),
             'edat' => $this->faker->numberBetween(18, 80),
             'telefon' => $this->faker->phoneNumber(),

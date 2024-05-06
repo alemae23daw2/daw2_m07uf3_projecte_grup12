@@ -17,10 +17,8 @@ class ApartamentFactory extends Factory
     public function definition(): array
     {
         $numero = $this->faker->numberBetween(1000, 9999);
-        $letras = $this->faker->lexify('???');
-        $codigo = $numero . $letras;
         return [
-            'codiUnic' => $codigo,
+            'codiUnic' => $numero,
             'referencia' => $this->faker->word(),
             'ciutat' => $this->faker->city(),
             'barri' => $this->faker->streetName(),
