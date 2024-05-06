@@ -11,11 +11,6 @@ class ClientController extends Controller
     {
         $dades_clients = Client::all();
         return view('llistaClients', compact('dades_clients'));
-        // Recollirà totes les entrades de la taula treballadors i les desarà dins d'una
-        //variable de nom $dades_treballadors
-        //Cridara a la vista llista.blade.php que es trobarà a resouces/views per mostrar
-        //les dades dels treballadors
-        //The compact() function creates an array from variables and their values.
     }
 
     /**
@@ -53,7 +48,7 @@ class ClientController extends Controller
     public function show(string $dni)
     {
         $dades_client = Client::findOrFail($dni);
-        return view('mostraClient',compact('dades_client')); 
+        return view('mostraClient', compact('dades_client')); 
     }
 
     /**
@@ -62,7 +57,7 @@ class ClientController extends Controller
     public function edit(string $dni)
     {
         $dades_client = Client::findOrFail($dni);
-        return view('actualitzaClient',compact('dades_client'));
+        return view('actualitzaClient', compact('dades_client'));
     }
 
     /**
@@ -93,17 +88,5 @@ class ClientController extends Controller
     {
         $client = Client::findOrFail($dni)->delete();
         return view('dashboard');
-    }
-
-    public function index_basic()
-    {
-        $dades_clients = Client::all();
-        return view('llista-basica', compact('dades_clients'));
-    }
-
-    public function show_basic($dniClient)
-    {
-        $dades_clients = Client::findOrFail($dniClient);
-        return view('mostra-basica', compact('dades_clients'));
-    }
+    }   
 }
