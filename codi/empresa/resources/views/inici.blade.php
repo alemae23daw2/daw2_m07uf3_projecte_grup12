@@ -6,16 +6,13 @@
         <title>Empresa</title>
     </head>
     <body>
-        <div>Pàgina inicial de l'aplicació web Empresa</div>
-            @if (Route::has('login'))
-                @auth
-                    <a href="{{ url('/dashboard') }}">Dashboard</a>
-                @else
-                    <a href="{{ route('login') }}">Log in</a><br>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a><br>
-                    @endif
-                @endauth
-            @endif
+        <p>Pàgina inicial de l'aplicació web Empresa</p>
+        @if (Route::has('login'))
+            @auth
+                <a href="{{ url('/dashboard') }}">Dashboard</a>
+            @else
+                <a href="{{ route('login') }}">Log in</a><br>
+            @endauth
+        @endif
     </body>
 </html>

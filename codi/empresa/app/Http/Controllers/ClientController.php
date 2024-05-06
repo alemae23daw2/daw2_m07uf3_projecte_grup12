@@ -93,4 +93,16 @@ class ClientController extends Controller
         $client = Client::findOrFail($dni)->delete();
         return view('dashboard');
     }
+
+    public function index_basic()
+    {
+        $dades_clients = Client::all();
+        return view('llista-basica', compact('dades_clients'));
+    }
+
+    public function show_basic($dniClient)
+    {
+        $dades_clients = Client::findOrFail($dniClient);
+        return view('mostra-basica', compact('dades_clients'));
+    }
 }

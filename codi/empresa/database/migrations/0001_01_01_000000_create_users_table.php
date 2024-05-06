@@ -18,8 +18,8 @@ return new class extends Migration
             $table->enum('tipus', ['Treballador', 'Cap de departament'])->null();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('horaEntrada');
-            $table->string('horaSortida');
+            $table->string('horaEntrada')->nullable();
+            $table->string('horaSortida')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

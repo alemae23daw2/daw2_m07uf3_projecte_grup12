@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lloga', function (Blueprint $table) {
+        Schema::create('llogas', function (Blueprint $table) {
             $table->string('dniClient');
             $table->foreign('dniClient')->references('dniClient')->on('clients')->onDelete('cascade')->onUpdate('cascade');
             $table->string('codiUnic');
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lloga');
+        Schema::dropIfExists('llogas');
     }
 };
