@@ -24,10 +24,10 @@
                     <a href="{{ route('register') }}">Crea un nou usuari</a><br>
                 </div>
                 <div class="p-6 text-gray-900">
-                    <a href="{{ url('clients') }}">Usuaris: Visualitza, actualitza i esborra registres</a>
+                    <a href="{{ url('usuaris') }}">Usuaris: Visualitza, actualitza i esborra registres</a>
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ url('clients/create') }}">Usuaris: Crea un nou usuari</a>
+                    <a href="{{ url('usuaris/create') }}">Usuaris: Crea un nou usuari</a>
                 </div>
             </div>
         </div>

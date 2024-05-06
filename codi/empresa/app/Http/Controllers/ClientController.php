@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use PDF;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
@@ -14,11 +16,16 @@ class ClientController extends Controller
         return view('llistaClients', compact('dades_clients'));
     }
 
-    public function pdf(string $dni)
+    public function pdf($dniClient)
     {
-        $dades_client = Client::findOrFail($dni);
-        $pdf = PDF::loadView('mostraClient', compact($dades_client));
-        return view('dashboard');
+        $client = Client::findOrFail($dniClient);
+        $html = view('pdfClient', compact('client'))->render();
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->render();
+        return $dompdf->stream('client.pdf');
     }
 
     /**
@@ -56,7 +63,7 @@ class ClientController extends Controller
     public function show(string $dni)
     {
         $dades_client = Client::findOrFail($dni);
-        return view('mostraClient', compact('dades_client')); 
+        return view('mostraClient', compact('dades_client'));
     }
 
     /**

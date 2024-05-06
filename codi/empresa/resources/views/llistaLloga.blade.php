@@ -6,15 +6,17 @@
         <thead>
             <tr class="table-primary">
             <td>DNI Client</td>
-            <td>Nom i Cognoms</td>
-            <td>Edat</td>
-            <td>Telefon</td>
-            <td>Adreça</td>
-            <td>Ciutat</td>
-            <td>País</td>
-            <td>Email</td>
-            <td>Tipus de Tarjeta</td>
-            <td>Numero de la Tarjeta</td>
+            <td>Codi Ùnic</td>
+            <td>Data Inici</td>
+            <td>Hora Inici</td>
+            <td>Data Final</td>
+            <td>Hora Final</td>
+            <td>Lloc de lliurament de les Claus</td>
+            <td>Lloc de devolució de les Claus</td>
+            <td>Preu per dia</td>
+            <td>Dipòsit</td>
+            <td>Quantitat de dipòsit</td>
+            <td>Tipus d'assegurança</td>
             <td>Accions sobre la taula</td>
             </tr>
         </thead>
@@ -34,13 +36,13 @@
             <td>{{$llog->dipositQuantitat}}</td>
             <td>{{$llog->tipusAsseguranca}}</td>
             <td class="text-left">
-                <form action="{{ route('lloga.destroy', $llog->dniClient, $llog->codiUnic)}}" method="post" style="display: inline-block">
+                <form action="{{ route('lloga.destroy', $llog->dniClient)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger btn-sm" type="submit">Esborra</button>
                 </form>
-                <a href="{{ route('lloga.edit', $llog->dniClient, $llog->codiUnic)}}" class="btn btn-primary btn-sm">Edita</a>
-                <a href="{{ route('lloga.show', $llog->dniClient, $llog->codiUnic)}}" class="btn btn-info btn-sm">Mostra</a>
+                <a href="{{ route('lloga.edit', $llog->dniClient)}}" class="btn btn-primary btn-sm">Edita</a>
+                <a href="{{ route('lloga.show', $llog->dniClient)}}" class="btn btn-info btn-sm">Mostra</a>
             </td>
             </tr>
             @endforeach

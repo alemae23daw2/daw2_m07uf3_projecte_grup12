@@ -2,6 +2,9 @@
 @section('content')
 <h1>Dades del client</h1>
 <div class="mt-5">
+	<form action="{{ route('clients.pdf', $dades_client->dniClient)}}" method="get" style="display: inline-block">
+        <button class="btn btn-danger btn-lg" type="submit">PDF</button>
+    </form>
     <table class="table table-striped table-bordered table-hover">
 	<thead class="thead-dark">
 		<tr class="table-primary">
@@ -55,7 +58,7 @@
     <div class="p-6 bg-white border-b border-gray-200">
 	<a href="{{ url('dashboard') }}">Torna al dashboard</a>                     
     </div>
-	<form action="{{ route('clients.pdf', $cli->dniClient)}}" method="get" style="display: inline-block">
+	<form action="{{ route('clients.pdf', $dades_client->dniClient)}}" method="get" style="display: inline-block">
         <button class="btn btn-danger btn-sm" type="submit">PDF</button>
     </form>
     <div class="p-6 bg-white border-b border-gray-200">

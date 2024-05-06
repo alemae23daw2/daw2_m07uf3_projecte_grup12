@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use App\Models\Apartament;
 use Illuminate\Http\Request;
 
@@ -24,6 +27,18 @@ class ApartamentController extends Controller
     public function create()
     {
         return view('creaApartament');
+    }
+
+    public function pdf($codiUnic)
+    {
+        $apt = Apartament::findOrFail($codiUnic);
+        $html = view('pdfApartament', compact('apt'))->render();
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml($html);
+        $dompdf->render();
+        return $dompdf->stream('apt.pdf');
     }
 
     /**

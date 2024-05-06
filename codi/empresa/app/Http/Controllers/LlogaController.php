@@ -52,20 +52,18 @@ class LlogaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $dni, string $codi)
+    public function show(string $dni)
     {
-        $dades_lloga = Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
-        ->firstOrFail();
+        $dades_lloga = Lloga::findOrFail($dni);
         return view('mostraLloga',compact('dades_lloga')); 
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $dni, string $codi)
+    public function edit(string $dni)
     {
-        $dades_lloga = Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
-        ->firstOrFail(); 
+        $dades_lloga = Lloga::findOrFail($dni);
         return view('actualitzaLloga',compact('dades_lloga'));
     }
 
@@ -88,8 +86,7 @@ class LlogaController extends Controller
             'dipositQuantitat' => 'required',
             'tipusAsseguranca' => 'required'
         ]);
-        Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
-        ->firstOrFail()->update($noves_dades_lloga);
+        Lloga::findOrFail($dni)->update($noves_dades_lloga);
         return view('dashboard');
     }
 
@@ -98,21 +95,7 @@ class LlogaController extends Controller
      */
     public function destroy(string $dni)
     {
-        $lloga = Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
-        ->firstOrFail()->delete();
+        $lloga = Lloga::findOrFail($dni)->delete();;
         return view('dashboard');
-    }
-
-    public function index_basic()
-    {
-        $dades_lloga = Lloga::all();
-        return view('llista-basica', compact('dades_lloga'));
-    }
-
-    public function show_basic($dniClient)
-    {
-        $dades_lloga = Lloga::where(['dniClient' => $dni, 'codiUnic' => $codi])
-        ->firstOrFail();
-        return view('mostra-basica', compact('dades_lloga'));
     }
 }

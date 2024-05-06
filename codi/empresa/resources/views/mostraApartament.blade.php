@@ -2,6 +2,9 @@
 @section('content')
 <h1>Dades de l'apartament</h1>
 <div class="mt-5">
+	<form action="{{ route('apartaments.pdf', $dades_apartament->codiUnic)}}" method="get" style="display: inline-block">
+        <button class="btn btn-lg btn-danger" type="submit">PDF</button>
+    </form>
     <table class="table table-striped table-bordered table-hover">
 	<thead class="thead-dark">
 		<tr class="table-primary">
