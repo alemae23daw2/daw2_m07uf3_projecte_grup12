@@ -20,8 +20,11 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="{{ url('apartaments/create') }}">Apartaments: Crea un nou apartament</a>
                 </div>
+                <div class="p-6 text-gray-900">
+                    <a href="{{ url('lloga') }}">Lloga: Visualitza, actualitza i esborra registres</a>
+                </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="{{ route('register') }}">Crea un nou usuari</a><br>
+                    <a href="{{ url('lloga/create') }}">Lloga: Crea un nou llogament</a>
                 </div>
                 <div class="p-6 text-gray-900">
                     <a href="{{ url('usuaris') }}">Usuaris: Visualitza, actualitza i esborra registres</a>
