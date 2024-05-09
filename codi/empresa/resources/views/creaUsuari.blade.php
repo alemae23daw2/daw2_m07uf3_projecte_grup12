@@ -28,11 +28,15 @@
         </div>
         <div class="form-group">           
             <label for="tipus">Tipus</label>
-            <input type="number" class="form-control" name="tipus"/>
+            <input type="text" class="form-control" name="tipus"/>
         </div>
         <div class="form-group">       
             <label for="horaEntrada">Hora d'entrada</label>
             <input type="text" class="form-control" name="horaEntrada"/>
+        </div>
+        <div class="form-group">       
+            <label for="password">Contraseña</label>
+            <input type="password" class="form-control" name="password"/>
         </div>
         <div class="form-group">           
             <label for="horaSortida">Hora de sortida</label>

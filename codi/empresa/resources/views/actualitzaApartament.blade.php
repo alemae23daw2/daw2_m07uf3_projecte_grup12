@@ -14,65 +14,65 @@
             </ul>
         </div>
         @endif
-        <form method="post" action="{{ route('apartaments.update', $dades_apartaments->codiUnic) }}">
+        <form method="post" action="{{ route('apartaments.update', $dades_apartament->codiUnic) }}">
 			@csrf
             @method('PATCH')
             <div class="form-group">           
                 <label for="codiUnic">Codi Únic</label>
-				<input type="text" class="form-control" name="codiUnic" value="{{ $dades_apartaments->codiUnic }}" />
+				<input type="text" class="form-control" name="codiUnic" value="{{ $dades_apartament->codiUnic }}" />
 			</div>
 			<div class="form-group">           
 				<label for="referencia">Referencia</label>
-				<input type="text" class="form-control" name="referencia" value="{{ $dades_apartaments->referencia }}"/>
+				<input type="text" class="form-control" name="referencia" value="{{ $dades_apartament->referencia }}"/>
 			</div>
 			<div class="form-group">           
 				<label for="ciutat">Ciutat</label>
-				<input type="text" class="form-control" name="ciutat" value="{{ $dades_apartaments->ciutat }}"/>
+				<input type="text" class="form-control" name="ciutat" value="{{ $dades_apartament->ciutat }}"/>
 			</div>
 			<div class="form-group">           
 				<label for="barri">Barri</label>
-				<input type="text" class="form-control" name="barri" value="{{ $dades_apartaments->barri }}"/>
+				<input type="text" class="form-control" name="barri" value="{{ $dades_apartament->barri }}"/>
 			</div>
 			<div class="form-group">           
 				<label for="nomCarrer">Nom Carrer</label>
-				<input type="text" class="form-control" name="nomCarrer"  value="{{ $dades_apartaments->nomCarrer }}"/>
+				<input type="text" class="form-control" name="nomCarrer"  value="{{ $dades_apartament->nomCarrer }}"/>
 			</div>        
 			<div class="form-group">
 				<label for="numCarrer">Numero Carrer</label>
-				<input type="number" class="form-control" name="numCarrer"  value="{{ $dades_apartaments->numCarrer }}"/>
+				<input type="number" class="form-control" name="numCarrer"  value="{{ $dades_apartament->numCarrer }}"/>
 			</div>
 			<div class="form-group">
 				<label for="pis">Pis</label>
-				<input type="number" class="form-control" name="pis"  value="{{ $dades_apartaments->pis }}"/>
+				<input type="number" class="form-control" name="pis"  value="{{ $dades_apartament->pis }}"/>
 			</div>
 			<div class="form-group">
 				<label for="numLlits">Numero de Llits</label>
-				<input type="number" class="form-control" name="numLlits"  value="{{ $dades_apartaments->numLlits }}"/>
+				<input type="number" class="form-control" name="numLlits"  value="{{ $dades_apartament->numLlits }}"/>
 			</div>
 			<div class="form-group">
 				<label for="numHabitacions">Numero d'Habitacions'</label>
-				<input type="number" class="form-control" name="numHabitacions"  value="{{ $dades_apartaments->numHabitacions }}"/>
+				<input type="number" class="form-control" name="numHabitacions"  value="{{ $dades_apartament->numHabitacions }}"/>
 			</div>
 			<div class="form-group">           
 				<label for="ascensor">Ascensor</label>
 				<select name="ascensor">
-					<option value="si" {{ $dades_apartaments->ascensor == "si" ? 'selected' : ''}}>Si</option>
-					<option value="no" {{ $dades_apartaments->ascensor == "no" ? 'selected' : ''}}>No</option>
+					<option value="si" {{ $dades_apartament->ascensor == "si" ? 'selected' : ''}}>Si</option>
+					<option value="no" {{ $dades_apartament->ascensor == "no" ? 'selected' : ''}}>No</option>
 				</select>
 			</div>
 			<div class="form-group">           
 				<label for="calefaccio">Ascensor</label>
 				<select name="calefaccio">
-					<option value="Elèctrica" {{ $dades_apartaments->calefaccio == "Elèctrica" ? 'selected' : ''}}>Elèctrica</option>
-					<option value="Gas Natural" {{ $dades_apartaments->calefaccio == "Gas Natural" ? 'selected' : ''}}>Gas Natural</option>
-					<option value="Butá" {{ $dades_apartaments->calefaccio == "Butá" ? 'selected' : ''}}>Butá</option>
+					<option value="Elèctrica" {{ $dades_apartament->calefaccio == "Elèctrica" ? 'selected' : ''}}>Elèctrica</option>
+					<option value="Gas Natural" {{ $dades_apartament->calefaccio == "Gas Natural" ? 'selected' : ''}}>Gas Natural</option>
+					<option value="Butá" {{ $dades_apartament->calefaccio == "Butá" ? 'selected' : ''}}>Butá</option>
 				</select>
 			</div>
 			<div class="form-group">           
 				<label for="aireCondicionat">Aire Acondicionat</label>
 				<select name="aireCondicionat">
-					<option value="si" {{ $dades_apartaments->aireCondicionat == "si" ? 'selected' : ''}}>Si</option>
-					<option value="no" {{ $dades_apartaments->aireCondicionat == "no" ? 'selected' : ''}}>No</option>
+					<option value="si" {{ $dades_apartament->aireCondicionat == "si" ? 'selected' : ''}}>Si</option>
+					<option value="no" {{ $dades_apartament->aireCondicionat == "no" ? 'selected' : ''}}>No</option>
 				</select>
 			</div>
 			<button type="submit" class="btn btn-block btn-primary">Envia</button>

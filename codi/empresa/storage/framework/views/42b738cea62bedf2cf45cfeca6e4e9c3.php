@@ -30,8 +30,11 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <a href="<?php echo e(url('apartaments/create')); ?>">Apartaments: Crea un nou apartament</a>
                 </div>
+                <div class="p-6 text-gray-900">
+                    <a href="<?php echo e(url('lloga')); ?>">Lloga: Visualitza, actualitza i esborra registres</a>
+                </div>
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <a href="<?php echo e(route('register')); ?>">Crea un nou usuari</a><br>
+                    <a href="<?php echo e(url('lloga/create')); ?>">Lloga: Crea un nou llogament</a>
                 </div>
                 <div class="p-6 text-gray-900">
                     <a href="<?php echo e(url('usuaris')); ?>">Usuaris: Visualitza, actualitza i esborra registres</a>
